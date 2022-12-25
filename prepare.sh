@@ -10,7 +10,7 @@ function main () {
 	if [[ "$(command -v apt-get)" != "" ]];then
 		$SUDO apt-get update -y 
 		$SUDO apt-get update --fix-missing 
-		$SUDO apt install -y curl
+		$SUDO apt install -y curl gcc-aarch64-linux-gnu qemu
 	elif [[ "$(command -v zypper)" != "" ]];then
 		$SUDO zypper install -y curl
 	elif [[ "$(command -v dnf)" != "" ]];then
@@ -19,7 +19,6 @@ function main () {
 		echo "Your OS is not supported."
 		exit -1
 	fi
-	$SUDO apt install -y gcc-aarch64-linux-gnu 
 
 }
 
